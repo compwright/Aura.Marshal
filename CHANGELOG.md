@@ -1,4 +1,4 @@
-# 4.1.0
+# 4.0.2
 
 ## What's Changed
 * Enable PHP 8.2, 8.3 compat by @koriym in https://github.com/auraphp/Aura.Marshal/pull/42
