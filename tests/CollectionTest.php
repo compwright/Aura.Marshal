@@ -101,7 +101,9 @@ class CollectionTest extends TestCase
     public function testToArray()
     {
         $expected = array_map(
-            fn (object $entity): array => (array) $entity,
+            function ($entity): array {
+                return (array) $entity;
+            },
             $this->data
         );
         $actual = $this->collection->toArray();
