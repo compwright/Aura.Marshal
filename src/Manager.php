@@ -46,7 +46,7 @@ class Manager
      * An array of type definition arrays, which are converted to type
      * objects as you request them.
      *
-     * @var array
+     * @var array<string, GenericType|array<string, mixed>>
      *
      */
     protected $types;
@@ -139,7 +139,7 @@ class Manager
      *
      * @param RelationBuilder $relation_builder A builder for relation objects.
      *
-     * @param array $types Type definitions.
+     * @param array<string, array<string, mixed>> $types Type definitions.
      *
      */
     public function __construct(
@@ -158,7 +158,7 @@ class Manager
      *
      * @param string $name The name to use for the type.
      *
-     * @param array $info An array of type definition information.
+     * @param array<string, mixed> $info An array of type definition information.
      *
      * @return void
      *
@@ -180,7 +180,7 @@ class Manager
      *
      * @param string $name The name for the relation.
      *
-     * @param array $info The relation information.
+     * @param array<string, mixed> $info The relation information.
      *
      * @return void
      *
@@ -225,7 +225,10 @@ class Manager
             $this->buildType($name);
         }
 
-        return $this->types[$name];
+        /** @var GenericType $type */
+        $type = $this->types[$name];
+
+        return $type;
     }
 
     /**
@@ -247,8 +250,12 @@ class Manager
      */
     protected function buildType($name): void
     {
-        // instantiate and retain the type object. if we don't do this before
-        // building related fields, then we enter a race condition.
+        /**
+         * Instantiate and retain the type object. if we don't do this before
+         * building related fields, then we enter a race condition.
+         * 
+         * @var array<string, mixed> $info
+         */
         $info = $this->types[$name];
         $this->types[$name] = $this->type_builder->newInstance($info);
 
@@ -264,7 +271,7 @@ class Manager
      *
      * Returns the names of all types in the manager.
      *
-     * @return array
+     * @return string[]
      *
      */
     public function getTypes()
@@ -276,10 +283,8 @@ class Manager
      *
      * Unsets all entities in all types in the manager.
      *
-     * @return null
-     *
      */
-    public function clear()
+    public function clear(): void
     {
         foreach ($this->types as $type) {
             if ($type instanceof GenericType) {
