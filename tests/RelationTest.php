@@ -56,7 +56,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testNoForeignType(): void
@@ -69,7 +69,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testNoNativeField(): void
@@ -82,7 +82,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testNoForeignField(): void
@@ -95,7 +95,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testNoThroughType(): void
@@ -108,7 +108,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testNoThroughNativeField(): void
@@ -121,7 +121,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testNoThroughForeignField(): void
@@ -134,7 +134,7 @@ class RelationTest extends TestCase
 
         $this->manager = new Manager($type_builder, $relation_builder, $types);
         $this->expectException('Aura\Marshal\Exception');
-        $this->manager->posts;
+        $this->manager->__get('posts');
     }
 
     public function testGetForeignType(): void
