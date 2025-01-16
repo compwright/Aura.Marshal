@@ -18,8 +18,6 @@ class CollectionTest extends TestCase
     /** @var array<int, object> */
     protected $data;
 
-    protected $type;
-
     /** @var GenericCollection */
     protected $collection;
 
