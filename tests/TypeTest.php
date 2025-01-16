@@ -36,7 +36,7 @@ class TypeTest extends TestCase
         $this->type = new GenericType;
         $this->type->setIdentityField($info['identity_field']);
         $this->type->setIndexFields($info['index_fields']);
-        $this->type->setEntityBuilder(new EntityBuilder(new LazyBuilder));
+        $this->type->setEntityBuilder(new EntityBuilder);
         $this->type->setCollectionBuilder(new CollectionBuilder);
     }
 
