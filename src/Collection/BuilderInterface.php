@@ -10,8 +10,6 @@
  */
 namespace Aura\Marshal\Collection;
 
-use Aura\Marshal\Type\GenericType;
-
 /**
  *
  * An interface for collection builder objects.

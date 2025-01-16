@@ -10,8 +10,6 @@
  */
 namespace Aura\Marshal\Entity;
 
-use Aura\Marshal\Type\GenericType;
-
 /**
  *
  * An interface for EntityBuilder objects.

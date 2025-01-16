@@ -10,8 +10,6 @@
  */
 namespace Aura\Marshal\Entity;
 
-use Aura\Marshal\Lazy\BuilderInterface as LazyBuilderInterface;
-
 /**
  *
  * Creates a new entity object for a type.
