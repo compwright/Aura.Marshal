@@ -882,7 +882,7 @@ class GenericType extends Data
      *
      * @param object $entity The entity to find initial data for.
      *
-     * @return array The initial data for the entity.
+     * @return ?array The initial data for the entity.
      *
      */
     public function getInitialData($entity)
@@ -890,6 +890,8 @@ class GenericType extends Data
         if ($this->initial_data->contains($entity)) {
             return $this->initial_data[$entity];
         }
+
+        return null;
     }
 
     /**
@@ -908,7 +910,7 @@ class GenericType extends Data
         $changed = [];
 
         // initial data for this entity
-        $initial_data = $this->getInitialData($entity);
+        $initial_data = $this->getInitialData($entity) ?? [];
 
         // go through all the initial data values
         foreach ($initial_data as $field => $old) {
