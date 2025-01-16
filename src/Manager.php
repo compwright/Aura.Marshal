@@ -244,10 +244,8 @@ class Manager
      *
      * @param string $name The type name to build.
      *
-     * @return GenericType
-     *
      */
-    protected function buildType($name)
+    protected function buildType($name): void
     {
         // instantiate and retain the type object. if we don't do this before
         // building related fields, then we enter a race condition.
