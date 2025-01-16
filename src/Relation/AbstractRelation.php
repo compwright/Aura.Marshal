@@ -126,7 +126,7 @@ abstract class AbstractRelation
         GenericType $foreign,
         $foreign_type,
         $foreign_field,
-        GenericType $through = null,
+        ?GenericType $through = null,
         $through_type = null,
         $through_native_field = null,
         $through_foreign_field = null
