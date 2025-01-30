@@ -948,8 +948,10 @@ class GenericType extends Data
      *
      * Unsets all entities from this type.
      *
+     * @return void
+     *
      */
-    public function clear(): void
+    public function clear()
     {
         $this->data = [];
         $this->index_identity = [];
