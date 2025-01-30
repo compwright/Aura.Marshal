@@ -247,8 +247,10 @@ class Manager
      *
      * @param string $name The type name to build.
      *
+     * @return void
+     *
      */
-    protected function buildType($name): void
+    protected function buildType($name)
     {
         /**
          * Instantiate and retain the type object. if we don't do this before
@@ -283,8 +285,10 @@ class Manager
      *
      * Unsets all entities in all types in the manager.
      *
+     * @return void
+     *
      */
-    public function clear(): void
+    public function clear()
     {
         foreach ($this->types as $type) {
             if ($type instanceof GenericType) {
